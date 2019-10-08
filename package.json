@@ -1,0 +1,23 @@
+{
+  "name": "tiny-reactive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrainlau/tiny-reactive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrainlau/tiny-reactive/issues"
+  },
+  "homepage": "https://github.com/jrainlau/tiny-reactive#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
