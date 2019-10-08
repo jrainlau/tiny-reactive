@@ -13,12 +13,10 @@
 
     window.state = reactive({
       count: 0,
-      child: {
-        name: 'Tiny'
-      }
+      arr: []
     })
     effect(() => {
-      console.log(`New count: ${state.count}`)
+      console.log(`New arr: ${state.arr}`)
     })
   </script>
 </body>

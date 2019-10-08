@@ -1,5 +1,4 @@
-import { targetMap } from './reactive.js'
-
+export const targetMap = new WeakMap()
 export const effectStack = []
 
 export function track (target, operationType, key) {

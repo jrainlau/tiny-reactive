@@ -16,7 +16,6 @@ function createSetter (target, key, value, receiver) {
   const hadKey = hasOwn(target, key)
   const oldValue = target[key]
   const result = Reflect.set(target, key, value, receiver)
-
   if (!hadKey) {
     trigger(target, 'add', key)
   } else if (value !== oldValue) {
