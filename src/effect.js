@@ -16,7 +16,6 @@ export function track (target, operationType, key) {
 
     if (!dep.has(effect)) {
       dep.add(effect)
-      effect.deps.push(dep)
     }
   }
 }
@@ -49,7 +48,6 @@ export function effect (fn) {
   const effect = function effect(...args) {
     return run(effect, fn, args)
   }
-  effect.deps = []
 
   effect()
   return effect
@@ -57,14 +55,6 @@ export function effect (fn) {
 
 export function run(effect, fn, args) {
   if (effectStack.indexOf(effect) === -1) {
-    const { deps } = effect
-    if (deps.length) {
-      for (let i = 0; i < deps.length; i++) {
-        deps[i].delete(effect)
-      }
-      deps.length = 0
-    }
-
     try {
       effectStack.push(effect)
       return fn(...args)
