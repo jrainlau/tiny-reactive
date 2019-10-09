@@ -13,10 +13,19 @@
 
     window.state = reactive({
       count: 0,
-      arr: []
+      age: 18
     })
-    effect(() => {
-      console.log(`New arr: ${state.arr}`)
+
+    const effect1 = effect(() => {
+      console.log('effect1: ' + state.count)
+    })
+
+    const effect2 = effect(() => {
+      console.log('effect2: ' + state.age)
+    })
+
+    const effect3 = effect(() => {
+      console.log('effect3: ' + state.count, state.age)
     })
   </script>
 </body>

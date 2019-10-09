@@ -48,7 +48,6 @@ export function effect (fn) {
   const effect = function effect(...args) {
     return run(effect, fn, args)
   }
-
   effect()
   return effect
 }
