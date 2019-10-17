@@ -28,7 +28,7 @@ function createSetter (target, key, value, receiver) {
 function createDeleteProperty (target, key) {
   const hadKey = hasOwn(target, key)
   const oldValue = target[key]
-  const result = Reflect.set(target, key, value, receiver)
+  const result = Reflect.deleteProperty(target, key)
 
   if (hadKey) {
     trigger(target, 'delete', key)
